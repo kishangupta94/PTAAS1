@@ -13,6 +13,7 @@ then
 	then
 		EMAIL=$5
 		echo Launching Scan against $1://$2:$3$4 E-Mailing reports to $5
+		rm -rf *.html
 		java -javaagent:BurpSuiteLoader_v2022.1.jar -noverify -jar burpsuite_pro_v2022.1.jar $SCHEME $FQDN $PORT $FOLDER
 		echo 'Your scan results are attached to this email.' | mutt $5 -s 'PTAAS Results' -a PTAAS_$1_$2_$3.html
 		#mutt -s 'PTAAS Results' $5 -a PTAAS_$1_$2_$3.html
