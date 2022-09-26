@@ -1,0 +1,4 @@
+# ignore ALL .log files
+*.log
+
+burpsuite_pro_v2022.1.jar
